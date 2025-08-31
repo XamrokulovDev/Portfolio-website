@@ -1,0 +1,27 @@
+{
+  "name": "Ulfatjon Cyber - Cybersecurity Expert Portfolio",
+  "short_name": "Ulfatjon Cyber",
+  "description": "Professional portfolio of cybersecurity expert and full-stack developer Ulfatjon Cyber",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1E40AF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
