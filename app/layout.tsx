@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import "./globals.css";
 
-const SITE_URL = "https://ulfatcyber.vercel.app";
+const SITE_URL = "https://ulfatcyber.netlify.app";
 const LOGO_PNG = `${SITE_URL}/logo.png`;
 
 export const metadata: Metadata = {
@@ -149,7 +149,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
-
+        <meta name="google-site-verification" content="ZMUPut-NNfrH6f2F6pS95im36OkuO3GwjGszQkb588U" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
