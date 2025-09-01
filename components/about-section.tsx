@@ -1,57 +1,36 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Smartphone, Server, Bot, Zap, Globe } from "lucide-react"
+import { Code, Server, Bot } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { useLanguage } from "@/hooks/use-language"
 
 export function AboutSection() {
-  const { t } = useLanguage()
-
   const skills = [
     {
       icon: Code,
-      title: t("frontendDev"),
-      description: t("frontendDesc"),
+      title: "Frontend Development",
+      description: "React, Next.js, TypeScript, Tailwind CSS - Building modern, responsive user interfaces",
       color: "text-blue-500",
     },
     {
       icon: Server,
-      title: t("backendDev"),
-      description: t("backendDesc"),
+      title: "Backend Development",
+      description: "Node.js, Express, API development, database design and server-side architecture",
       color: "text-green-500",
     },
     {
       icon: Bot,
-      title: t("telegramBotDev"),
-      description: t("telegramBotDesc"),
+      title: "Telegram Bot Development",
+      description: "Custom Telegram bots with advanced features, payment integration, and automation",
       color: "text-purple-500",
-    },
-    {
-      icon: Smartphone,
-      title: t("mobileFirst"),
-      description: t("mobileFirstDesc"),
-      color: "text-orange-500",
-    },
-    {
-      icon: Zap,
-      title: t("performance"),
-      description: t("performanceDesc"),
-      color: "text-yellow-500",
-    },
-    {
-      icon: Globe,
-      title: t("fullStack"),
-      description: t("fullStackDesc"),
-      color: "text-red-500",
-    },
+    }
   ]
 
   const stats = [
-    { number: "3+", label: t("yearsExperience") },
-    { number: "40+", label: t("projectsCompleted") },
-    { number: "15+", label: t("telegramBots") },
-    { number: "100%", label: t("clientSatisfaction") },
+    { number: "3+", label: "Years Experience" },
+    { number: "40+", label: "Projects Completed" },
+    { number: "15+", label: "Telegram Bots" },
+    { number: "100%", label: "Client Satisfaction" },
   ]
 
   return (
@@ -138,8 +117,18 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">{t("aboutTitle")}</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">{t("aboutDescription")}</p>
+          <h2 
+            title="About Ulfatjon" 
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance"
+          >
+            About Ulfatjon
+          </h2>
+          <p 
+            title="Passionate full-stack developer specializing in modern web technologies and Telegram bot development, creating innovative digital solutions for businesses worldwide."
+            className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty"
+          >
+            Passionate full-stack developer specializing in modern web technologies and Telegram bot development, creating innovative digital solutions for businesses worldwide.
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -181,11 +170,28 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">{t("buildingFuture")}</h3>
+            <h3 
+              title="Building the Digital Future"
+              className="text-2xl font-bold text-foreground mb-6"
+            >
+              Building the Digital Future
+            </h3>
             <div className="space-y-4 text-muted-foreground">
-              <p>{t("aboutText1")}</p>
-              <p>{t("aboutText2")}</p>
-              <p>{t("aboutText3")}</p>
+              <p
+                title="With over 2 years of experience in full-stack development, I specialize in creating modern web applications using React, Next.js, TypeScript, and Node.js. My passion lies in building user-friendly interfaces and robust backend systems."
+              >
+                With over 2 years of experience in full-stack development, I specialize in creating modern web applications using React, Next.js, TypeScript, and Node.js. My passion lies in building user-friendly interfaces and robust backend systems.
+              </p>
+              <p
+                title="Based in Uzbekistan, I work with clients globally to develop custom web applications and Telegram bots. From e-commerce platforms to automation tools, I bring ideas to life with clean, efficient code and modern development practices."
+              >
+                Based in Uzbekistan, I work with clients globally to develop custom web applications and Telegram bots. From e-commerce platforms to automation tools, I bring ideas to life with clean, efficient code and modern development practices.
+              </p>
+              <p
+                title="I'm particularly skilled in Telegram bot development, having created over 5 bots with features ranging from payment processing to complex business automation. I believe in continuous learning and staying up-to-date with the latest web technologies."
+              >
+                I'm particularly skilled in Telegram bot development, having created over 5 bots with features ranging from payment processing to complex business automation. I believe in continuous learning and staying up-to-date with the latest web technologies.
+              </p>
             </div>
 
             {/* Stats */}
@@ -199,8 +205,15 @@ export function AboutSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <h2 
+                    title={stat.number}
+                    className="text-2xl font-bold text-primary"
+                  >
+                    {stat.number}
+                  </h2>
+                  <h4
+                    title={stat.label}
+                   className="text-sm text-muted-foreground">{stat.label}</h4>
                 </motion.div>
               ))}
             </div>
@@ -213,8 +226,13 @@ export function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mt-20"
         >
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8">{t("coreExpertise")}</h3>
+          <h3
+            title="Core Expertise" 
+            className="text-2xl font-bold text-center text-foreground mb-8">
+              Core Expertise
+            </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <motion.div
@@ -230,9 +248,18 @@ export function AboutSection() {
                       <div className={`p-2 rounded-lg bg-muted ${skill.color}`}>
                         <skill.icon size={24} />
                       </div>
-                      <h4 className="text-lg font-semibold text-foreground ml-3">{skill.title}</h4>
+                      <h4
+                        title={skill.title} 
+                        className="text-lg font-semibold text-foreground ml-3">
+                          {skill.title}
+                        </h4>
                     </div>
-                    <p className="text-muted-foreground text-sm">{skill.description}</p>
+                    <p
+                      title={skill.description} 
+                      className="text-muted-foreground text-sm"
+                    >
+                      {skill.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>

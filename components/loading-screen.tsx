@@ -59,17 +59,8 @@ export function LoadingScreen() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Ulfatjon<span className="text-accent">Cyber</span>
+              Ulfat <span className="text-accent">Cyber</span>
             </motion.h1>
-
-            <motion.p
-              className="text-muted-foreground"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              Loading portfolio...
-            </motion.p>
 
             <motion.div
               className="flex justify-center space-x-1 mt-4"

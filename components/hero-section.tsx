@@ -3,15 +3,12 @@
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Instagram, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
 
 export function HeroSection() {
-  const { t } = useLanguage()
-
   const socialLinks = [
-    { icon: Github, href: "https://github.com/ulfatjon", label: "GitHub" },
-    { icon: Instagram, href: "https://instagram.com/ulfatjon_cyber", label: "Instagram" },
-    { icon: Send, href: "https://t.me/ulfatjon_cyber", label: "Telegram" },
+    { icon: Github, href: "https://github.com/XamrokulovDev", label: "GitHub" },
+    { icon: Instagram, href: "https://www.instagram.com/ulfatjon_xamrokulov", label: "Instagram" },
+    { icon: Send, href: "https://t.me/ulfatjons_channel", label: "Telegram" },
   ]
 
   const particleVariants = {
@@ -138,28 +135,30 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
+            title="Hi, I'm Ulfatjon Full-Stack Developer"
+            className="text-3xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {t("heroTitle")} <br />
+            Hi, I'm Ulfatjon<br />
             <motion.span
               className="text-accent"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              {t("heroSubtitle")}
+              Full-Stack Developer
             </motion.span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty"
+            title="Frontend React/Next.js and Backend Node.js developer specializing in modern web applications and Telegram bot development. Creating innovative digital solutions from Uzbekistan for clients worldwide."
+            className="text-sm sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {t("heroDescription")}
+            Frontend React/Next.js and Backend Node.js developer specializing in modern web applications and Telegram bot development. Creating innovative digital solutions from Uzbekistan for clients worldwide.
           </motion.p>
 
           <motion.div
@@ -169,13 +168,13 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="text-lg px-8 py-3" asChild>
-                <a href="#projects">{t("viewMyWork")}</a>
+              <Button size="lg" className="text-md sm:text-lg px-8 py-3" asChild>
+                <a href="#projects">View My Work</a>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent" asChild>
-                <a href="#contact">{t("getInTouch")}</a>
+              <Button variant="outline" size="lg" className="text-md sm:text-lg px-8 py-3 bg-transparent" asChild>
+                <a href="#contact">Get In Touch</a>
               </Button>
             </motion.div>
           </motion.div>
@@ -221,7 +220,6 @@ export function HeroSection() {
               whileHover={{ scale: 1.1 }}
             >
               <ArrowDown size={24} />
-              <span className="sr-only">{t("scrollToAbout")}</span>
             </motion.button>
           </motion.div>
         </motion.div>

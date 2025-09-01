@@ -4,10 +4,13 @@ import { motion } from "framer-motion"
 import { Github, Instagram, Send, Heart } from "lucide-react"
 
 export function Footer() {
+
+  const year = new Date().getFullYear();
+
   const socialLinks = [
-    { icon: Github, href: "https://github.com/ulfatjon", label: "GitHub" },
-    { icon: Instagram, href: "https://instagram.com/ulfatjon_cyber", label: "Instagram" },
-    { icon: Send, href: "https://t.me/ulfatjon_cyber", label: "Telegram" },
+    { icon: Github, href: "https://github.com/XamrokulovDev", label: "GitHub" },
+    { icon: Instagram, href: "https://www.instagram.com/ulfatjon_xamrokulov", label: "Instagram" },
+    { icon: Send, href: "https://t.me/ulfatjons_channel", label: "Telegram" },
   ]
 
   const quickLinks = [
@@ -28,9 +31,9 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-foreground">
+            <a href="#home" className="block text-2xl font-bold mb-3 text-foreground">
               Ulfatjon<span className="text-primary">Dev</span>
-            </h3>
+            </a>
             <p className="text-muted-foreground mb-4">
               Frontend and backend developer specializing in React, Next.js, Node.js, and Telegram bot development.
             </p>
@@ -84,8 +87,20 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4 text-foreground">Get In Touch</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>xamrokulovulfatjon2005@gmail.com</p>
-              <p>+998 90 123 45 67</p>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=xamrokulovulfatjon2005@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                xamrokulovulfatjon2005@gmail.com
+              </a>
+              <a 
+                href={"tel: +998900302423"}
+                className="text-[15px] block"
+              >
+                +998 90 030 24 23
+              </a>
               <p>Samarkand, Uzbekistan</p>
             </div>
           </motion.div>
@@ -99,7 +114,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-muted-foreground text-sm">© 2024 Ulfatjon Dev. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">© {year} Ulfat Cyber. All rights reserved.</p>
           <p className="text-muted-foreground text-sm flex items-center mt-2 md:mt-0">
             Made with <Heart size={16} className="mx-1 text-red-400" /> in Uzbekistan
           </p>

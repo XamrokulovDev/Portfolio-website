@@ -41,10 +41,10 @@ export function ScrollToTop() {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             aria-label="Scroll to top"
           >
-            <ArrowUp size={20} />
+            <ArrowUp size={23} />
           </Button>
         </motion.div>
       )}

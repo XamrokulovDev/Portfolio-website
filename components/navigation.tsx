@@ -4,14 +4,11 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Github, Instagram, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { LanguageSwitcher } from "@/components/language-switcher"
-import { useLanguage } from "@/hooks/use-language"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const { language, changeLanguage, t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,10 +36,10 @@ export function Navigation() {
   }, [])
 
   const navItems = [
-    { name: t("home"), href: "#home" },
-    { name: t("about"), href: "#about" },
-    { name: t("projects"), href: "#projects" },
-    { name: t("contact"), href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "About Us", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contacts", href: "#contact" },
   ]
 
   const socialLinks = [
@@ -75,7 +72,7 @@ export function Navigation() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 md:py-2 ${
           isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm border-b border-border/50" : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -90,12 +87,9 @@ export function Navigation() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <button
-                onClick={() => handleNavClick("#home")}
-                className="text-xl font-bold text-primary hover:text-accent transition-colors"
-              >
-                Ulfatjon<span className="text-accent">Dev</span>
-              </button>
+              <a href="#home" className="text-2xl font-bold mb-4 text-foreground">
+                Ulfatjon<span className="text-primary">Dev</span>
+              </a>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -107,7 +101,7 @@ export function Navigation() {
                     <motion.button
                       key={item.name}
                       onClick={() => handleNavClick(item.href)}
-                      className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative ${
+                      className={`px-3 py-2 rounded-md transition-all duration-200 relative cursor-pointer ${
                         isActive ? "text-primary" : "text-foreground hover:text-primary"
                       }`}
                       whileHover={{ scale: 1.05 }}
@@ -130,9 +124,7 @@ export function Navigation() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex items-center gap-2">
-              <LanguageSwitcher currentLanguage={language} onLanguageChange={changeLanguage} />
-
+            <div className="md:hidden flex items-center gap-2">
               {/* Mobile menu button */}
               <div className="md:hidden">
                 <Button
@@ -209,7 +201,7 @@ export function Navigation() {
                       <motion.button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
-                        className={`block w-full text-left text-2xl font-semibold transition-all duration-300 relative group ${
+                        className={`block w-full text-left text-2xl transition-all duration-300 relative group ${
                           isActive ? "text-primary" : "text-foreground hover:text-primary"
                         }`}
                         initial={{ opacity: 0, x: 50 }}

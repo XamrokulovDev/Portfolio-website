@@ -6,11 +6,8 @@ import { ExternalLink, Github, Shield, Globe, Database, Smartphone, Lock, Code }
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { useLanguage } from "@/hooks/use-language"
 
 export function ProjectsSection() {
-  const { t } = useLanguage()
-
   const projects = [
     {
       id: 1,
@@ -193,13 +190,25 @@ export function ProjectsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">{t("featuredProjects")}</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">{t("projectsDescription")}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+            Featured Projects
+          </h2>
+          <p
+            title="Explore my portfolio of web applications, Telegram bots, and full-stack solutions that demonstrate expertise in modern development technologies and best practices." 
+            className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty"
+            >
+              Explore my portfolio of web applications, Telegram bots, and full-stack solutions that demonstrate expertise in modern development technologies and best practices.
+            </p>
         </motion.div>
 
         {/* Featured Projects */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8">{t("highlightedWork")}</h3>
+          <h3 
+            title="Highlighted Work" 
+            className="text-2xl font-bold text-foreground mb-8"
+          >
+            Highlighted Work
+          </h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
               <motion.div
