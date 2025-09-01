@@ -8,7 +8,6 @@ import { CursorGlow } from "@/components/ui/cursor-glow";
 import "./globals.css";
 
 const SITE_URL = "https://ulfatcyber.vercel.app";
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const LOGO_PNG = `${SITE_URL}/logo.png`;
 
 export const metadata: Metadata = {
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
       "Full-stack developer from Uzbekistan specializing in React, Next.js, Node.js, and Telegram bot development.",
     images: [
       {
-        url: OG_IMAGE,
+        url: LOGO_PNG,
         width: 1200,
         height: 630,
         alt: "Ulfatjon Xamrokulov — Full-Stack Developer Portfolio",
@@ -74,7 +73,7 @@ export const metadata: Metadata = {
     title: "Ulfatjon Xamrokulov — Full-Stack Developer",
     description:
       "Full-stack developer from Uzbekistan specializing in modern web technologies.",
-    images: [OG_IMAGE],
+    images: [LOGO_PNG],
     creator: "@ulfat_cyber",
   },
 
@@ -114,7 +113,7 @@ export default function RootLayout({
     description:
       "Full-stack developer specializing in React, Next.js, Node.js, and Telegram bot development.",
     url: SITE_URL,
-    image: [OG_IMAGE, LOGO_PNG],
+    image: [LOGO_PNG],
     sameAs: [
       "https://github.com/XamrokulovDev",
       "https://www.instagram.com/ulfatjon_xamrokulov",
