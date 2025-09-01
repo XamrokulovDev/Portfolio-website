@@ -7,11 +7,15 @@ import { Suspense } from "react";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import "./globals.css";
 
+const SITE_URL = "https://ulfatcyber.vercel.app";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const LOGO_PNG = `${SITE_URL}/logo.png`;
+
 export const metadata: Metadata = {
   title:
-    "Ulfatjon Xamrokulov - Full-Stack Developer | React, Next.js, Node.js & Telegram Bots",
+    "Ulfatjon Xamrokulov — Full-Stack Developer | React, Next.js, Node.js & Telegram Bots",
   description:
-    "Professional portfolio of Ulfatjon - Expert full-stack developer specializing in React, Next.js, TypeScript, Node.js, and Telegram bot development. Based in Uzbekistan, serving clients worldwide with modern web solutions.",
+    "Professional portfolio of Ulfatjon — Full-stack developer (React, Next.js, TypeScript, Node.js, Telegram bots). Based in Uzbekistan, serving clients worldwide.",
   keywords: [
     "Ulfatjon",
     "UlfatDev",
@@ -26,19 +30,15 @@ export const metadata: Metadata = {
     "Uzbekistan developer",
     "Tashkent developer",
     "web development",
-    "modern web applications",
     "portfolio",
-    "JavaScript developer",
     "Tailwind CSS",
   ],
-  authors: [{ name: "Ulfatjon Xamrokulov", url: "https://ulfat.cyber" }],
+  authors: [{ name: "Ulfatjon Xamrokulov", url: SITE_URL }],
   creator: "Ulfatjon",
   publisher: "Ulfatjon",
-  generator: "v0.app",
   applicationName: "Ulfatjon Portfolio",
   referrer: "origin-when-cross-origin",
   category: "Technology",
-  classification: "Portfolio Website",
   robots: {
     index: true,
     follow: true,
@@ -53,34 +53,34 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ulfat.cyber",
+    url: SITE_URL,
     siteName: "Ulfatjon Portfolio",
-    title: "Ulfatjon Xamrokulov - Full-Stack Developer",
+    title: "Ulfatjon Xamrokulov — Full-Stack Developer",
     description:
-      "Professional full-stack developer from Uzbekistan specializing in React, Next.js, Node.js, and Telegram bot development.",
+      "Full-stack developer from Uzbekistan specializing in React, Next.js, Node.js, and Telegram bot development.",
     images: [
       {
-        url: "/og-image.png",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Ulfatjon Xamrokulov - Full-Stack Developer Portfolio",
+        alt: "Ulfatjon Xamrokulov — Full-Stack Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ulfatjon Xamrokulov - Full-Stack Developer",
+    title: "Ulfatjon Xamrokulov — Full-Stack Developer",
     description:
-      "Professional full-stack developer from Uzbekistan specializing in modern web technologies",
-    images: ["/og-image.png"],
-    creator: "@ulfat_cyber",
+      "Full-stack developer from Uzbekistan specializing in modern web technologies.",
+    images: [OG_IMAGE],
+    creator: "@ulfat_cyber", // agar mavjud bo'lsa
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-verification-code", // GSC dan keyin qo'yasiz
     yandex: "your-yandex-verification-code",
   },
   alternates: {
-    canonical: "https://ulfat.cyber",
+    canonical: SITE_URL,
   },
   other: {
     "msapplication-TileColor": "#1E40AF",
@@ -90,9 +90,46 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Ulfatjon Xamrokulov",
+    alternateName: ["UlfatDev", "Ulfat DevWorks"],
+    description:
+      "Full-stack developer specializing in React, Next.js, Node.js, and Telegram bot development.",
+    url: SITE_URL,
+    image: [OG_IMAGE, LOGO_PNG],
+    sameAs: [
+      "https://github.com/XamrokulovDev",
+      "https://www.instagram.com/ulfatjon_xamrokulov",
+      "https://t.me/ulfatjons_channel",
+    ],
+    jobTitle: "Full-Stack Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Ulfat DevWorks",
+      url: SITE_URL,
+      logo: LOGO_PNG,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Samarkand",
+      addressCountry: "UZ",
+    },
+    email: "mailto:ulfatjon@dev.uz",
+    telephone: "+998900302423",
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "Telegram Bots",
+      "Web Development",
+      "Modern Web Applications",
+    ],
+  };
+
   return (
     <html lang="en" className="dark">
       <head>
@@ -108,61 +145,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Ulfatjon" />
         <meta name="msapplication-TileColor" content="#1E40AF" />
         <meta name="theme-color" content="#1E40AF" />
-
-        {/* Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Ulfatjon Xamrokulov",
-              alternateName: ["UlfatDev", "Ulfat DevWorks"],
-              description:
-                "Full-stack developer specializing in React, Next.js, Node.js, and Telegram bot development",
-              url: "https://ulfat.cyber",
-              images: [
-                {
-                  url: "/og-image.png",
-                  width: 1200,
-                  height: 630,
-                  alt: "Ulfatjon Xamrokulov - Full-Stack Developer Portfolio",
-                },
-                {
-                  url: "/logo.png",
-                  width: 512,
-                  height: 512,
-                  alt: "Ulfatjon Logo",
-                },
-              ],
-              sameAs: [
-                "https://github.com/XamrokulovDev",
-                "https://www.instagram.com/ulfatjon_xamrokulov",
-                "https://t.me/ulfatjons_channel",
-              ],
-              jobTitle: "Full-Stack Developer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Ulfat DevWorks",
-              },
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Samarkand",
-                addressCountry: "UZ",
-              },
-              email: "ulfatjon@dev.uz",
-              telephone: "+998900302423",
-              knowsAbout: [
-                "React",
-                "Next.js",
-                "Node.js",
-                "TypeScript",
-                "Telegram Bots",
-                "Web Development",
-                "Modern Web Applications",
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
